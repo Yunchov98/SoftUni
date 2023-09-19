@@ -1,0 +1,6 @@
+<div *ngIf="!isAdmin()">
+  <app-user-header />
+</div>
+<div *ngIf="isAdmin()">
+  <app-admin-header />
+</div>

@@ -1,0 +1,37 @@
+<div class="bg-white opacity-90 w-fit mx-auto p-10 mt-8 rounded-2xl">
+  <div class="flex justify-center flex-col">
+    <app-cancel-button />
+    <h2 class="flex justify-center font-bold text-sm md:text-base lg:text-3xl">
+      About Us
+    </h2>
+    <div class="flex justify-center mt-8" *ngIf="isLoading">
+      <app-spiner />
+    </div>
+    <div *ngIf="!isLoading" class="bg-gray-100 text-black mt-4 flex-col p-4">
+      <p class="flex justify-center text-xs md:base lg:text-xl">
+        Ultraclean inc. is real company that you can trust and count on 100%
+      </p>
+      <p class="flex justify-center text-xs md:base lg:text-xl">
+        Ultraclean is a new company in the cleaning industry.
+      </p>
+      <p class="flex justify-center text-xs md:base lg:text-xl">
+        We offer Home cleaning, Exterior window cleaning, Pressure washing,
+        Gutter cleaning, Upholstery cleaning.
+      </p>
+      <p class="flex justify-center text-xs md:base lg:text-xl">
+        We are located in Chicago IL (USA).
+      </p>
+      <p
+        class="flex justify-center text-base md:text-lg lg:text-3xl mt-3 font-bold"
+      >
+        We will be happy to take care of your home!
+      </p>
+    </div>
+  </div>
+  <div
+    *ngIf="!isLoading"
+    class="flex justify-center mt-5 bg-black p-6 rounded-xl items-center"
+  >
+    <app-contacts-button />
+  </div>
+</div>

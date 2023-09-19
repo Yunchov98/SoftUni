@@ -1,0 +1,188 @@
+<div class="bg-white opacity-90 w-fit mx-auto p-10 mt-8 rounded-2xl">
+  <app-cancel-button />
+  <div
+    class="flex justify-center uppercase font-bold text-sm md:text-xl lg:text-3xl"
+  >
+    booking form
+  </div>
+  <div class="flex justify-center mt-2 font-bold text-red-600">
+    <p>Fields with * are required!</p>
+  </div>
+  <div class="flex justify-center" *ngIf="isLoading">
+    <app-spiner />
+  </div>
+  <div class="mt-8" *ngIf="!isLoading">
+    <form #bookingForm="ngForm" (ngSubmit)="createRequest(bookingForm)">
+      <div class="grid grid-cols-2 space-x-3">
+        <div class="flex flex-col">
+          <label for="name" class="flex justify-start ml-2 text-sm md:text-xl"
+            >Name <span class="text-red-500">*</span></label
+          >
+          <input
+            type="text"
+            name="name"
+            class="border-2 border-slate-700 rounded-xl text-sm md:text-xl"
+            ngModel
+            #nameInput="ngModel"
+            required
+            minlength="1"
+            pattern="^[a-zA-Z]+"
+          />
+          <ng-container *ngIf="nameInput.touched">
+            <p class="text-red-600" *ngIf="nameInput.errors?.['required']">
+              Name is required!
+            </p>
+            <p class="text-red-600" *ngIf="nameInput.errors?.['minlength']">
+              Name must be at least 1 characters long.
+            </p>
+            <p class="text-red-600" *ngIf="nameInput.errors?.['pattern']">
+              The name may contain only Latin letters (Example: John)
+            </p>
+          </ng-container>
+        </div>
+        <div class="flex flex-col">
+          <label for="email" class="flex justify-start ml-2 text-sm md:text-xl"
+            >Email <span class="text-red-500">*</span></label
+          >
+          <input
+            type="text"
+            name="email"
+            class="border-2 border-slate-700 rounded-xl text-sm md:text-xl"
+            ngModel
+            #emailInput="ngModel"
+            required
+            minlength="6"
+            maxlength="30"
+            pattern="[a-z0-9]+@[a-z]+\.[a-z]{2,3}"
+          />
+          <ng-container *ngIf="emailInput.touched">
+            <p class="text-red-600" *ngIf="emailInput.errors?.['required']">
+              Email is required!
+            </p>
+            <p class="text-red-600" *ngIf="emailInput.errors?.['minlength']">
+              Email must be at least 6 characters long.
+            </p>
+            <p class="text-red-600" *ngIf="emailInput.errors?.['pattern']">
+              Invalid email (Example: example@example.com)
+            </p>
+          </ng-container>
+        </div>
+      </div>
+      <div class="flex flex-col mt-2">
+        <label for="phone" class="flex justify-start ml-2 text-sm md:text-xl"
+          >Phone <span class="text-red-500">*</span></label
+        >
+        <input
+          type="number"
+          name="phone"
+          class="border-2 border-slate-700 rounded-xl text-sm md:text-xl"
+          ngModel
+          #phoneInput="ngModel"
+          required
+          minlength="10"
+          pattern="^[0-9 -]{10,}"
+        />
+        <ng-container *ngIf="phoneInput.touched">
+          <p class="text-red-600" *ngIf="phoneInput.errors?.['required']">
+            Phone number is required!
+          </p>
+          <p class="text-red-600" *ngIf="phoneInput.errors?.['minlength']">
+            Phone number must be at least 10 digits long.
+          </p>
+          <p class="text-red-600" *ngIf="phoneInput.errors?.['pattern']">
+            Invalid phone number (Example: 1 2345 67890/1234567890/1-2345-67890)
+          </p>
+        </ng-container>
+      </div>
+      <div class="flex flex-col mt-2">
+        <label for="address" class="flex justify-start ml-2 text-sm md:text-xl"
+          >Address <span class="text-red-500">*</span></label
+        >
+        <input
+          type="text"
+          name="address"
+          class="border-2 border-slate-700 rounded-xl text-sm md:text-xl"
+          ngModel
+          #addressInput="ngModel"
+          required
+          minlength="2"
+          pattern="^[a-zA-Z ]{2,}-[a-zA-Z0-9 ]{2,}"
+        />
+        <ng-container *ngIf="addressInput.touched">
+          <p class="text-red-600" *ngIf="addressInput.errors?.['required']">
+            Address is required!
+          </p>
+          <p class="text-red-600" *ngIf="addressInput.errors?.['minlength']">
+            Address must be at least 2 digits long.
+          </p>
+          <p class="text-red-600" *ngIf="addressInput.errors?.['pattern']">
+            Address should be in format: City - Street number
+          </p>
+        </ng-container>
+      </div>
+      <div class="flex flex-col mt-2">
+        <label for="city" class="flex justify-start ml-2 text-sm md:text-xl"
+          >City / Town</label
+        >
+        <input
+          type="text"
+          name="city"
+          class="border-2 border-slate-700 rounded-xl text-sm md:text-xl"
+          ngModel
+          #cityInput="ngModel"
+        />
+      </div>
+      <div class="flex flex-col mt-2">
+        <label for="services" class="flex justify-start ml-2 text-sm md:text-xl"
+          >Services <span class="text-red-500">*</span></label
+        >
+        <ng-select
+          required
+          ngModel
+          #select="ngModel"
+          [(ngModel)]="selectedServices"
+          [ngModelOptions]="{ standalone: true }"
+          [items]="services"
+          bindLabel="service"
+          placeholder="--Select--"
+          [multiple]="true"
+          [closeOnSelect]="false"
+          [clearable]="true"
+          clearAllText="Clear All"
+          (change)="sumTotalPrice()"
+        >
+        </ng-select>
+        <ng-container *ngIf="select.touched">
+          <p class="text-red-600" *ngIf="select.errors?.['required']">
+            Please select a service!
+          </p>
+        </ng-container>
+      </div>
+      <div class="flex justify-center space-x-3 mt-4">
+        <span class="text-sm md:text-xl">I am not a robot</span>
+        <label for="check"></label>
+        <input required ngModel #check="ngModel" type="checkbox" name="check" />
+        <ng-container *ngIf="!check.touched">
+          <p class="text-red-600" *ngIf="check.errors?.['required']">
+            Please confirm!
+          </p>
+        </ng-container>
+      </div>
+      <div class="flex justify-center mt-4 font-bold" *ngIf="totalPrice > 0">
+        <span>Total Price: {{ totalPrice }}$</span>
+      </div>
+      <div class="flex justify-center" *ngIf="errorMessage">
+        <p class="text-red-600">{{ errorMessage }}</p>
+      </div>
+      <div
+        class="flex justify-center mt-4 border-2 border-black bg-black text-white rounded-full"
+      >
+        <input
+          type="submit"
+          value="submit form"
+          class="uppercase text-sm md:text-xl"
+        />
+      </div>
+    </form>
+  </div>
+</div>

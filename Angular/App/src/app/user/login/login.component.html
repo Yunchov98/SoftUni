@@ -1,0 +1,55 @@
+<div class="wrapper mt-32 lg:mt-52">
+  <div class="login form">
+    <app-cancel-button />
+    <header>Login</header>
+    <form #loginForm="ngForm" (ngSubmit)="loginHandler(loginForm)">
+      <div>
+        <label for="email"></label>
+        <input
+          type="text"
+          name="email"
+          placeholder="Enter your email"
+          ngModel
+          #emailInput="ngModel"
+          required
+          pattern="[a-z0-9]+@[a-z]+\.[a-z]{2,3}"
+        />
+        <ng-container *ngIf="emailInput.touched && emailInput.invalid">
+          <p class="text-red-600" *ngIf="emailInput.errors?.['required']">
+            Email is required!
+          </p>
+          <p class="text-red-600" *ngIf="emailInput.errors?.['pattern']">
+            Invalid Email Adress
+          </p>
+        </ng-container>
+      </div>
+      <div>
+        <label for="password"></label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Enter your password"
+          ngModel
+          #passwordInput="ngModel"
+          required
+        />
+        <ng-container *ngIf="passwordInput.touched && passwordInput.invalid">
+          <p class="text-red-600" *ngIf="passwordInput.errors?.['required']">
+            Password is required!
+          </p>
+        </ng-container>
+      </div>
+      <div class="flex justify-center" *ngIf="errorMessage">
+        <p class="text-red-600">{{ errorMessage }}</p>
+      </div>
+      <input type="submit" value="Log In" class="button" />
+    </form>
+    <div class="signup">
+      <span class="signup"
+        >Dont have an account?
+        <a routerLink="/user/register">Sign Up</a>
+      </span>
+    </div>
+  </div>
+</div>
