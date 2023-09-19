@@ -1,0 +1,6 @@
+function movieTickets(input) {
+
+
+}
+
+movieTickets();

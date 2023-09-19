@@ -1,0 +1,5 @@
+function safePasswordsGenerator(input){
+
+
+    
+}
