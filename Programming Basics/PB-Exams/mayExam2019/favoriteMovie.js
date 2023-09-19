@@ -1,7 +1,0 @@
-function favoriteMovie(input) {
-
-    
-
-}
-
-favoriteMovie();

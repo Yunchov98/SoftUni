@@ -1,0 +1,1 @@
+console.log('Обичм те '.repeat(100))
