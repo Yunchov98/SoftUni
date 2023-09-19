@@ -1,0 +1,33 @@
+<!-- Browse Page -->
+<section id="catalog-section" class="spaced">
+
+    <h1 class="item">Auctions</h1>
+
+    <!-- List of available auctions -->
+    <ul class="catalog cards">
+        {{#each offers}}
+            <li class="item">
+                <header class="pad-med">
+                    <h2>{{title}}</h2>
+                </header>
+
+                <div class="align-center">
+                    <img class="img-thumb" src="{{imageUrl}}">
+                </div>
+
+                <footer class="align-center pad-med">
+                    <p>Current price: <strong>${{price}}</strong></p>
+                    <a class="action" href="/auctions/details/{{_id}}">See details</a>
+                </footer>
+            </li>
+            {{else}}
+            <div class="item pad-large align-center">
+                <p>Nothing has been listed yet. Be the first!</p>
+                <div>
+                    <a class="action" href="/auctions/create">Publish Auction</a>
+                </div>
+            </div>
+        {{/each}}
+    </ul>
+
+</section>
