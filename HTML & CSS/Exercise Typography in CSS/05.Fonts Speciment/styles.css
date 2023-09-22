@@ -1,0 +1,21 @@
+div {
+    font-family: 'Raleway', sans-serif;
+    margin: 2.5em;
+}
+
+h1,
+h2 {
+    font-family: 'Great Vibes', cursive;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: -0.2em;
+}
+
+div * {
+    line-height: 1.2;
+    font-weight: bold;
+}
+
+div:first-of-type {
+    margin-bottom: 1.5em;
+}
