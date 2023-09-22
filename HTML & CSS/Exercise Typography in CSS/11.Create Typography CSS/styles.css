@@ -1,12 +1,17 @@
 body {
-    font-family: 'Helvetica', sans-serif;
+    font-family: "Helvetica", sans-serif;
     font-size: 16px;
     line-height: 1.5;
-    padding: 4em  3em 2em 3em;
+    padding: 4em 3em 2em 3em;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Georgia', serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Georgia", serif;
 }
 
 table {
@@ -23,7 +28,8 @@ td {
     border: 1px solid #dddddd;
 }
 
-th, td {
+th,
+td {
     text-align: left;
     padding-left: 9px;
 }
@@ -33,16 +39,15 @@ table tbody tr:nth-child(odd) {
 }
 
 blockquote {
-    border-left: 3px solid rgb(221,221,221);
+    border-left: 3px solid rgb(221, 221, 221);
     font-style: italic;
     height: 12em;
 }
 
-blockquote > p {
+blockquote>p {
     padding: 16px 0 0 20px;
-} 
+}
 
 blockquote footer {
     text-align: end;
 }
-
