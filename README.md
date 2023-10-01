@@ -1,3 +1,7 @@
+<a href="https://softuni.bg/" target="_blank">
+<img src="https://softuni.bg/content/images/svg-logos/software-university-logo.svg?sanitize=true" alt="Software University Logo">
+</a> 
+
 # Programming Basics
 The "Programming Basics" course gives the initial programming skills necessary for all technology majors at the Software University. This includes writing basic coding skills, working with a development environment (IDE), using variables and data, operators and expressions, working with the console (reading input data and printing results), using conditional statements (if, if-else) and loops (for, while, do-while).
 
