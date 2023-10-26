@@ -5,6 +5,7 @@ import Carousel from "./components/Carousel/CarouselService";
 import CarouselService from "./components/Carousel/CarouselService/CarouselService";
 import AboutUs from "./components/AboutUs/AboutUs";
 import Facts from "./components/Facts/Facts";
+import FactsService from "./components/Facts/FactsService/FactsService";
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
             <CarouselService />
             <AboutUs />
             <Facts />
+            <FactsService />
         </>
     );
 }
