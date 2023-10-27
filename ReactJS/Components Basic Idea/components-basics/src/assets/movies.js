@@ -9,7 +9,7 @@ export default [
         actors: "Tom Cruise, Kenneth Branagh, Bill Nighy, Tom Wilkinson",
         plot: "A dramatization of the 20 July assassination and political coup plot by desperate renegade German Army officers against Hitler during World War II.",
         posterUrl:
-            "http://ia.media-imdb.com/images/M/MV5BMTg3Njc2ODEyN15BMl5BanBnXkFtZTcwNTAwMzc3NA@@._V1_SX300.jpg",
+            "https://th.bing.com/th/id/R.f11ff9cf80765856f276287ab3841207?rik=5TOwEQjUr18qQA&riu=http%3a%2f%2fwww.freemovieposters.net%2fposters%2fvalkyrie_2008_504_poster.jpg&ehk=kOwHYe6pDCb402zlj2zwKokpZQT%2fOUhO%2bRfdDcFpNzE%3d&risl=&pid=ImgRaw&r=0",
     },
     {
         id: 6,
@@ -45,6 +45,6 @@ export default [
         actors: "Guy Pearce, Carrie-Anne Moss, Joe Pantoliano, Mark Boone Junior",
         plot: "A man juggles searching for his wife's murderer and keeping his short-term memory loss from being an obstacle.",
         posterUrl:
-            "https://images-na.ssl-images-amazon.com/images/M/MV5BNThiYjM3MzktMDg3Yy00ZWQ3LTk3YWEtN2M0YmNmNWEwYTE3XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+            "https://th.bing.com/th/id/OIP.oVnQ4Y2plpcp7RTQjTlUXQHaIg?pid=ImgDet&rs=1",
     },
 ];
