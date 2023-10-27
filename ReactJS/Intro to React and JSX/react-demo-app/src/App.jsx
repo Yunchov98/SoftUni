@@ -7,6 +7,7 @@ import AboutUs from "./components/AboutUs/AboutUs";
 import Facts from "./components/Facts/Facts";
 import FactsService from "./components/Facts/FactsService/FactsService";
 import Booking from "./components/Booking/Booking";
+import OurTeam from "./components/OurTeam/OurTeam";
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
             <Facts />
             <FactsService />
             <Booking  />
+            <OurTeam />
         </>
     );
 }
