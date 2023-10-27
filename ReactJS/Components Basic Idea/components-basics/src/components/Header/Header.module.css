@@ -1,0 +1,9 @@
+.header-container {
+    background-color: #369;
+    padding: 1em;
+}
+
+.header-container > h1 {
+    text-align: center;
+    color: #f0ffff;
+}
