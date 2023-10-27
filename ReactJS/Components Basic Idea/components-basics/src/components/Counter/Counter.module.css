@@ -1,0 +1,21 @@
+.counter-section {
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 2em;
+}
+
+.counter-section *:not(:last-child) {
+    text-align: center;
+    padding-bottom: 0.3em;
+}
+
+.buttons {
+    display: flex;
+    gap: 0.5em;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0.5em;
+}
+
+.buttons button {
+    padding: 0.2em 0.5em;
+}
