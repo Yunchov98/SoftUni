@@ -1,0 +1,71 @@
+.movie-item {
+    margin-bottom: 0.2em;
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 30%;
+    list-style: none;
+    align-items: center;
+    padding: 1em;
+    transition: box-shadow 0.5s ease-in-out;
+    position: relative;
+}
+
+.time {
+    position: absolute;
+    right: 10%;
+    top: 8%;
+    background: #fff;
+    border-radius: 10em;
+    opacity: 0;
+    padding: 0.2em 0.5em;
+    text-align: center;
+    transition: opacity 0.3s ease-in;
+}
+
+.movie-item:hover .time {
+    opacity: 90%;
+}
+
+.movie-item > *:not(.time) {
+    padding-bottom: 1em;
+}
+
+.movie-item:hover {
+    border: 1px solid #369;
+    border-radius: 0.3em;
+    box-shadow: 0 0 1em 0.2em inset #369;
+}
+
+.media {
+    opacity: 90%;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.movie-item:hover .media {
+    opacity: 100%;
+}
+
+.movie-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.content {
+    padding-top: 1em;
+}
+
+.content h4 {
+    text-align: center;
+    padding-bottom: 1em;
+}
+
+.content .actors {
+    padding-bottom: 1em;
+}
+
+.genres {
+    padding-top: 1em;
+    text-align: center;
+    gap: 2em;
+}
