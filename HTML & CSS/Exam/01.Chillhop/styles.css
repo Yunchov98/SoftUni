@@ -1,0 +1,83 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font: 16px/1.5 Helvetica, sans-serif;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+section {
+    display: flex;
+    max-width: 1040px;
+    margin: 2em auto;
+    background-color: #1881b6;
+    border: 5px solid black;
+    border-radius: 1em;
+    justify-content: space-between;
+}
+
+h2 {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: normal;
+    padding-bottom: 1rem;
+    display: block;
+}
+
+.media {
+    /* display: flex; */
+    flex-basis: 900px;
+    align-items: center;
+    margin: 2em;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 4em 0 2em 2em;
+    flex-grow: 1;
+    width: 100%;
+    flex: 1 1 100%;
+}
+
+.title {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    padding-bottom: 1.2em;
+}
+
+.text {
+    text-indent: 7ch;
+    padding-bottom: 1.5em;
+}
+
+.buttons {
+    padding-left: 5em;
+}
+
+.buttons a:first-of-type {
+    margin-right: 4em;
+}
+
+.buttons a {
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border: 1px solid #000;
+    border-radius: 0.5em;
+    font-weight: bold;
+    color: #000;
+}
+
+.btn.pink {
+    background-color: #b6416d;
+    color: #fff;
+}
