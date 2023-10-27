@@ -9,6 +9,7 @@ import FactsService from "./components/Facts/FactsService/FactsService";
 import Booking from "./components/Booking/Booking";
 import OurTeam from "./components/OurTeam/OurTeam";
 import Testimonial from "./components/Testimonial/Testimonial";
+import Footer from "./components/Footer/Footer";
 
 function App() {
     return (
@@ -21,9 +22,16 @@ function App() {
             <AboutUs />
             <Facts />
             <FactsService />
-            <Booking  />
+            <Booking />
             <OurTeam />
             <Testimonial />
+            <Footer />
+            <a
+                href="#"
+                class="btn btn-lg btn-primary btn-lg-square back-to-top"
+            >
+                <i class="bi bi-arrow-up"></i>
+            </a>
         </>
     );
 }
