@@ -1,0 +1,18 @@
+.movie-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+}
+
+.movie-list h3 {
+    padding-bottom: 2em;
+}
+
+.movie-list ul {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+}
