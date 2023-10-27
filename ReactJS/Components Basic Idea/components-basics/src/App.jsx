@@ -1,16 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import movies from "./assets/movies";
+
+import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header";
+import Counter from "./components/Counter/Counter";
+import Timer from "./components/Timer/Timer";
+import MovieList from "./components/Movies/MovieList/MovieList";
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-        <h1>Hello React</h1>
-    </>
-  )
+    return (
+        <>
+            <Header />
+            <main className="main-container">
+                <Counter />
+                <Timer startTime={5} />
+                <MovieList movies={movies} />
+            </main>
+            <Footer />
+        </>
+    );
 }
 
-export default App
+export default App;
