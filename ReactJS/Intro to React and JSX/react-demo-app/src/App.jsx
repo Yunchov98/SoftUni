@@ -10,6 +10,7 @@ import Booking from "./components/Booking/Booking";
 import OurTeam from "./components/OurTeam/OurTeam";
 import Testimonial from "./components/Testimonial/Testimonial";
 import Footer from "./components/Footer/Footer";
+import BackToTopBtn from "./components/BackToTop/BackToTopBtn";
 
 function App() {
     return (
@@ -26,12 +27,7 @@ function App() {
             <OurTeam />
             <Testimonial />
             <Footer />
-            <a
-                href="#"
-                class="btn btn-lg btn-primary btn-lg-square back-to-top"
-            >
-                <i class="bi bi-arrow-up"></i>
-            </a>
+            <BackToTopBtn />
         </>
     );
 }
