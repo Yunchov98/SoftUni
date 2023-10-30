@@ -47,4 +47,16 @@ export default [
         posterUrl:
             "https://th.bing.com/th/id/OIP.oVnQ4Y2plpcp7RTQjTlUXQHaIg?pid=ImgDet&rs=1",
     },
+    {
+        id: 9,
+        title: "Margin Call",
+        year: "2008",
+        runtime: "107",
+        genres: ["Drama", "Thriller"],
+        director: "J.C. Chandor",
+        actors: "Kevin Spacey, Paul Bettany, Jeremy Irons, Zachary Quinto",
+        plot: "In 2008, an unnamed investment bank begins laying off a large number of employees. Among those affected is Eric Dale, head of risk management. Dale's attempts to speak about the implications of a model he is working on are ignored. On his way out, he gives a flash drive containing his work to Peter Sullivan, an associate in his department, warning him to be careful. Sullivan, intrigued, works after hours to complete Dale's model.",
+        posterUrl:
+            "https://upload.wikimedia.org/wikipedia/en/6/62/Margin_Call.jpg",
+    },
 ];
