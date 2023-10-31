@@ -11,6 +11,7 @@ export default function MovieList(props) {
                 <Movie movieData={props.movies[2]} />
                 <Movie movieData={props.movies[3]} />
                 <Movie movieData={props.movies[4]} />
+                <Movie movieData={props.movies[5]} />
             </ul>
         </section>
     );
