@@ -59,4 +59,16 @@ export default [
         posterUrl:
             "https://upload.wikimedia.org/wikipedia/en/6/62/Margin_Call.jpg",
     },
+    {
+        id: 9,
+        title: "The Big Short",
+        year: "2015",
+        runtime: "130",
+        genres: ["Drama", "Biography", "Comedy"],
+        director: "Adam McKay",
+        actors: "Kevin Spacey, Paul Bettany, Jeremy Irons, Zachary Quinto",
+        plot: "In 2006-2007 a group of investors bet against the United States mortgage market. In their research, they discover how flawed and corrupt the market is.",
+        posterUrl:
+            "https://th.bing.com/th?id=OIP.vchpwr9-yzPvZi-tVhF6cQHaKc&w=131&h=184&rs=1&p=0&o=6&pid=Stories",
+    },
 ];
