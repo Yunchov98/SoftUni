@@ -1,35 +1,46 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from "react";
+
+import styles from "./App.module.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+    const [count, setCount] = useState(0);
+    const [numbers, setNumbers] = useState([1, 2, 3, 4, 5]);
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    useEffect(() => {
+        console.log("Mount compponent");
+    }, []);
+
+    useEffect(() => {
+        console.log(`Update component - ${numbers.length}`);
+    }, [count]);
+
+    useEffect(() => {
+        setTimeout(() => setCount((s) => s + 1), 1000);
+    }, [count]);
+
+    const onClick = () => {
+        setNumbers((oldState) => oldState.slice(0, oldState.length - 1));
+    };
+
+    return (
+        <div>
+            <h3>Count: {count}</h3>
+            <ul>
+                {numbers.map((number, index) => (
+                    <li
+                        data-key={index}
+                        key={index}
+                        className={styles["list-item"]}
+                    >
+                        {number * 2}
+                    </li>
+                ))}
+            </ul>
+
+            <button onClick={onClick}>Remove</button>
+            <button onClick={() => setCount(c => c + 1)}>+</button>
+        </div>
+    );
 }
 
-export default App
+export default App;
