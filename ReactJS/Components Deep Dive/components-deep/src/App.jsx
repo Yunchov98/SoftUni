@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 import styles from "./App.module.css";
+import Starwars from "./Starwars";
 
 function App() {
     const [count, setCount] = useState(0);
@@ -24,6 +25,8 @@ function App() {
 
     return (
         <div className={styles.app}>
+            <Starwars />
+
             <h3>Count: {count}</h3>
             <ul>
                 {numbers.map((number, index) => (
@@ -38,7 +41,7 @@ function App() {
             </ul>
 
             <button onClick={onClick}>Remove</button>
-            <button onClick={() => setCount(c => c + 1)}>+</button>
+            <button onClick={() => setCount((c) => c + 1)}>+</button>
         </div>
     );
 }
