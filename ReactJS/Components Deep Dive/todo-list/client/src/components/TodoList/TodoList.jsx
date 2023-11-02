@@ -23,12 +23,20 @@ export default function TodoList() {
         );
     };
 
+    const onAddNewTodoClick = () => {
+        const lastId = Number(todos[todos.length - 1]._id.split('_')[1]);
+        const text = prompt('Todo...');
+        const newTask = { _id: lastId + 1, text, isCompleted: false };
+
+        setTodos((state) => [newTask, ...state]);
+    };
+
     return (
         <section className="todo-list-container">
             <h1>Todo List</h1>
 
             <div className="add-btn-container">
-                <button className="btn">
+                <button onClick={onAddNewTodoClick} className="btn">
                     + Add new Todo
                 </button>
             </div>
