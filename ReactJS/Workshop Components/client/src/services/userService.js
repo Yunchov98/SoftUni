@@ -46,7 +46,7 @@ export const createUser = async (data) => {
 };
 
 export const deleteUser = async (userId) => {
-    await fetch(`${baseUrl}/${userId}`, {
+    return await fetch(`${baseUrl}/${userId}`, {
         method: 'DELETE',
     });
 };
