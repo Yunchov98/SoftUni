@@ -9,9 +9,14 @@ export const UserListItem = ({
     createdAt,
     imageUrl,
     onInfoClick,
+    onDeleteClick,
 }) => {
     const infoClickHanlder = () => {
         onInfoClick(_id);
+    };
+
+    const deleteClickHandler = () => {
+        onDeleteClick(_id);
     };
 
     return (
@@ -47,7 +52,11 @@ export const UserListItem = ({
                         ></path>
                     </svg>
                 </button>
-                <button className="btn delete-btn" title="Delete">
+                <button
+                    onClick={deleteClickHandler}
+                    className="btn delete-btn"
+                    title="Delete"
+                >
                     <svg
                         aria-hidden="true"
                         focusable="false"
