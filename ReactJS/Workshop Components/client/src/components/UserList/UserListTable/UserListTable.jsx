@@ -4,6 +4,15 @@ import { UserListItem } from './UserListItem/UserListItem';
 import * as userService from '../../../services/userService';
 
 export const UserListTable = () => {
+    const [users, setUsers] = useState([]);
+
+    useEffect(() => {
+        userService
+            .getAll()
+            .then((result) => setUsers(result))
+            .catch((err) => console.log(err));
+    }, []);
+
     return (
         <div className="table-wrapper">
             {/* <!-- Overlap components  --> */}
@@ -175,7 +184,17 @@ export const UserListTable = () => {
                 </thead>
                 <tbody>
                     {/* <!-- Table row component --> */}
-                    <UserListItem />
+                    {users.map((user) => (
+                        <UserListItem
+                            key={user._id}
+                            imageUrl={user.imageUrl}
+                            firstName={user.firstName}
+                            lastName={user.lastName}
+                            email={user.email}
+                            phoneNumber={user.phoneNumber}
+                            createdAt={user.createdAt}
+                        />
+                    ))}
                 </tbody>
             </table>
         </div>
