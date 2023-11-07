@@ -23,9 +23,26 @@ export const UserListTable = () => {
         setShowCreateModal(false);
     };
 
+    const userCreateHander = async (e) => {
+        e.preventDefault();
+
+        const data = Object.fromEntries(new FormData(e.currentTarget));
+
+        const newUser = await userService.createUser(data);
+
+        setUsers((state) => [...state, newUser]);
+
+        setShowCreateModal(false);
+    };
+
     return (
         <div className="table-wrapper">
-            {showCreateModal && <CreateUserModal hideCreateUserModal={hideCreateUserModal} />}
+            {showCreateModal && (
+                <CreateUserModal
+                    hideCreateUserModal={hideCreateUserModal}
+                    onUserCreate={userCreateHander}
+                />
+            )}
             {/* <!-- Overlap components  --> */}
 
             {/* <!-- <div className="loading-shade"> -->
