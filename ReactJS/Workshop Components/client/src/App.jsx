@@ -8,7 +8,7 @@ function App() {
         <>
             <Header />
 
-            <main className="main-content">
+            <main className="main">
                 <UserList />
             </main>
 
