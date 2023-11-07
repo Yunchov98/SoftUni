@@ -197,6 +197,8 @@ export const UserListTable = () => {
                     ))}
                 </tbody>
             </table>
+
+            <button className="btn-add btn">Add new user</button>
         </div>
     );
 };
