@@ -3,10 +3,13 @@ import { useEffect, useState } from 'react';
 import { UserListItem } from './UserListItem/UserListItem';
 import * as userService from '../../../services/userService';
 import { CreateUserModal } from '../../CreateUserModal/CreateUserModal';
+import { UserInfoModal } from '../../UserInfoModal/UserInfoModal';
 
 export const UserListTable = () => {
     const [users, setUsers] = useState([]);
     const [showCreateModal, setShowCreateModal] = useState(false);
+    const [showInfo, setShowInfo] = useState(false);
+    const [selectedUser, setSelectedUser] = useState(null);
 
     useEffect(() => {
         userService
@@ -35,12 +38,24 @@ export const UserListTable = () => {
         setShowCreateModal(false);
     };
 
+    const userInfoClickHandler = async (userId) => {
+        setSelectedUser(userId);
+        setShowInfo(true);
+    };
+
     return (
         <div className="table-wrapper">
             {showCreateModal && (
                 <CreateUserModal
                     hideCreateUserModal={hideCreateUserModal}
                     onUserCreate={userCreateHander}
+                />
+            )}
+
+            {showInfo && (
+                <UserInfoModal
+                    userId={selectedUser}
+                    onClose={() => setShowInfo(false)}
                 />
             )}
             {/* <!-- Overlap components  --> */}
@@ -211,16 +226,17 @@ export const UserListTable = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {/* <!-- Table row component --> */}
                     {users.map((user) => (
                         <UserListItem
                             key={user._id}
+                            _id={user._id}
                             imageUrl={user.imageUrl}
                             firstName={user.firstName}
                             lastName={user.lastName}
                             email={user.email}
                             phoneNumber={user.phoneNumber}
                             createdAt={user.createdAt}
+                            onInfoClick={userInfoClickHandler}
                         />
                     ))}
                 </tbody>
