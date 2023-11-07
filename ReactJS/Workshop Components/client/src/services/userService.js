@@ -7,6 +7,14 @@ export const getAll = async () => {
     return Object.values(result);
 };
 
+export const getUserById = async (userId) => {
+    const response = await fetch(`${baseUrl}/${userId}`);
+
+    const result = await response.json();
+
+    return result;
+};
+
 export const createUser = async (data) => {
     const body = {
         firstName: data.firstName,
