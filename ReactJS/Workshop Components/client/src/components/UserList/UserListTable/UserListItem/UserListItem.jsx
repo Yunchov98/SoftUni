@@ -1,13 +1,19 @@
 import { formatDate } from '../../../../utils/dateUtils';
 
 export const UserListItem = ({
+    _id,
     firstName,
     lastName,
     email,
     phoneNumber,
     createdAt,
     imageUrl,
+    onInfoClick,
 }) => {
+    const infoClickHanlder = () => {
+        onInfoClick(_id);
+    };
+
     return (
         <tr>
             <td>
@@ -58,7 +64,11 @@ export const UserListItem = ({
                         ></path>
                     </svg>
                 </button>
-                <button className="btn info-btn" title="Info">
+                <button
+                    onClick={infoClickHanlder}
+                    className="btn info-btn"
+                    title="Info"
+                >
                     <svg
                         aria-hidden="true"
                         focusable="false"
