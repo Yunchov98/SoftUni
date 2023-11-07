@@ -1,4 +1,7 @@
+import { useEffect, useState } from 'react';
+
 import { UserListItem } from './UserListItem/UserListItem';
+import * as userService from '../../../services/userService';
 
 export const UserListTable = () => {
     return (
