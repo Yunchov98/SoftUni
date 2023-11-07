@@ -1,4 +1,4 @@
-import { formatDate } from "../../../../utils/dateUtils";
+import { formatDate } from '../../../../utils/dateUtils';
 
 export const UserListItem = ({
     firstName,
@@ -6,7 +6,7 @@ export const UserListItem = ({
     email,
     phoneNumber,
     createdAt,
-    imageUrl
+    imageUrl,
 }) => {
     return (
         <tr>
