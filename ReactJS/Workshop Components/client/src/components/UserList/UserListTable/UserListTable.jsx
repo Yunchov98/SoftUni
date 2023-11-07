@@ -4,12 +4,14 @@ import { UserListItem } from './UserListItem/UserListItem';
 import * as userService from '../../../services/userService';
 import { CreateUserModal } from '../../CreateUserModal/CreateUserModal';
 import { UserInfoModal } from '../../UserInfoModal/UserInfoModal';
+import { UserDeleteModal } from '../../UserDeleteModal/UserDeleteModal';
 
 export const UserListTable = () => {
     const [users, setUsers] = useState([]);
     const [showCreateModal, setShowCreateModal] = useState(false);
     const [showInfo, setShowInfo] = useState(false);
     const [selectedUser, setSelectedUser] = useState(null);
+    const [showDelete, setShowDelete] = useState(false);
 
     useEffect(() => {
         userService
@@ -43,6 +45,19 @@ export const UserListTable = () => {
         setShowInfo(true);
     };
 
+    const deleteUserClickHandler = (userId) => {
+        setSelectedUser(userId);
+        setShowDelete(true);
+    };
+
+    const deleteUserHandler = async () => {
+        await userService.deleteUser(selectedUser);
+
+        setUsers((state) => state.filter((user) => user._id !== selectedUser));
+
+        setShowDelete(false);
+    };
+
     return (
         <div className="table-wrapper">
             {showCreateModal && (
@@ -56,6 +71,13 @@ export const UserListTable = () => {
                 <UserInfoModal
                     userId={selectedUser}
                     onClose={() => setShowInfo(false)}
+                />
+            )}
+
+            {showDelete && (
+                <UserDeleteModal
+                    onClose={() => setShowDelete(false)}
+                    onDelete={deleteUserHandler}
                 />
             )}
             {/* <!-- Overlap components  --> */}
@@ -237,6 +259,7 @@ export const UserListTable = () => {
                             phoneNumber={user.phoneNumber}
                             createdAt={user.createdAt}
                             onInfoClick={userInfoClickHandler}
+                            onDeleteClick={deleteUserClickHandler}
                         />
                     ))}
                 </tbody>
