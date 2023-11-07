@@ -1,4 +1,4 @@
-export const CreateUserModal = ({ hideCreateUserModal }) => {
+export const CreateUserModal = ({ hideCreateUserModal, onUserCreate }) => {
     return (
         <div className="overlay">
             <div onClick={hideCreateUserModal} className="backdrop"></div>
@@ -27,7 +27,7 @@ export const CreateUserModal = ({ hideCreateUserModal }) => {
                             </svg>
                         </button>
                     </header>
-                    <form>
+                    <form onSubmit={onUserCreate}>
                         <div className="form-row">
                             <div className="form-group">
                                 <label htmlFor="firstName">First name</label>
